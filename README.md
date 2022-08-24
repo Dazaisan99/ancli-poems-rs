@@ -34,9 +34,9 @@ Finally, move the executable in ```target/release``` to a directory in your path
 $ ancli-poetry -p/--path <PATH> -n/--name <NAME> [-h/--help]
 ```
 
-PATH is the path to the file you want to create cards with
+<PATH> is the path to the file you want to create cards with
 
-NAME is the name you want the deck created to have
+<NAME> is the name you want the deck created to have
 
 ### Example
-![Example](https://github.com/Dazaisan99/ancli-poetry/example.png)
+![Example](https://github.com/Dazaisan99/ancli-poems/example.png)
