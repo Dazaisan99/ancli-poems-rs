@@ -2,6 +2,9 @@
 
 Ancli-poems is a simple command line tool to help create anki cards from poems.
 
+###Example
+![Example](example.png)
+
 <details><summary><strong>Installation</strong></summary> 
 <p> 
 
@@ -37,6 +40,3 @@ $ ancli-poetry -p/--path <PATH> -n/--name <NAME> [-h/--help]
 <PATH> is the path to the file you want to create cards with
 
 <NAME> is the name you want the deck created to have
-
-### Example
-![Example](/example.png)
