@@ -11,7 +11,7 @@ Ancli-poems is a simple command line tool to help create anki cards from poems.
 ### Dependencies
 #### *You will only need cargo and git for the installation process*
 
-###Process
+### Process
 
 Git clone the repository and go into it
 
