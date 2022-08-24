@@ -30,5 +30,5 @@ fn main() {
 
     let path = Path::new(&path_arg);
 
-    create_deck(get_contents(&path), outpath);
+    create_deck(get_contents(&path), outpath).unwrap();
 }
