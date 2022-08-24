@@ -13,7 +13,7 @@ Ancli-poems is a simple command line tool to help create anki cards from poems.
 Git clone the repository and go into it
 
 ```console
-$ git clone https://github/dazaisan99/ancli-poetry
+$ git clone https://github.com/dazaisan99/ancli-poetry
 
 $ cd ancli-poetry
 ```
@@ -39,4 +39,4 @@ $ ancli-poetry -p/--path <PATH> -n/--name <NAME> [-h/--help]
 <NAME> is the name you want the deck created to have
 
 ### Example
-![Example](https://github.com/Dazaisan99/ancli-poems/example.png)
+![Example](/example.png)
