@@ -17,41 +17,49 @@ pub fn create_deck(contents: String, name: &String) {
 
     let mut rng = thread_rng();
 
+    let (fields, templates) = create_fields_and_templates(contents);
+
     let card_model = Model::new(
         rng.gen::<usize>(),
         "Poem Model",
-        vec![Field::new("Cloze"), Field::new("Poem")],
-        vec![Template::new("Poem template")
-            .qfmt("{{Cloze}}")
-            .afmt("{{Poem}}")],
+        fields,
+        templates,
+        //vec![Template::new("Poem template")
+        //    .qfmt("{{c1:Cloze}}")
+        //    .afmt("{{Poem}}")],
     );
+
+    fn create_fields_and_templates(contents: String) -> (Vec<Field>, Vec<Template>) {
+        eprintln!("{}", format!("Creating the fields and templates").blue());
+
+        let mut vec_field: Vec<Field> = Vec::new();
+        let mut vec_template: Vec<Template> = Vec::new();
+
+        let mut format = String::new();
+
+        let mut count: usize = 1;
+
+        for _ in contents.lines() {
+            vec_field.push(Field::new(&format!("f{}", count)));
+            format.push_str(&format!("{{{{c{}:f{}}}}}", count, count));
+
+            count += 1;
+        }
+        let template = Template::new("Poem template").qfmt(&format).afmt("{{}}");
+
+        vec_field.push(Field::new("Poem"));
+        vec_template.push(template);
+
+        (vec_field, vec_template)
+    }
 
     let mut deck = Deck::new(
         rng.gen::<usize>(),
         name,
-        &format!("A deck containenig the verses of {}", name),
+        &format!("A deck containing the verses of {}", name),
     );
 
-    let &mut deck = create_notes(&mut deck, contents, card_model);
-}
-
-fn create_notes(&mut deck: Deck, contents: String, model: Model) -> Deck {
-    let mut count: usize = 0;
-
-    for _ in contents.lines() {
-        deck.add_note(
-            Note::new(
-                model,
-                // créer les fields
-                vec!["", ""],
-            )
-            .unwrap(),
-        );
-
-        count += 1;
-    }
-
-    deck
+    eprintln!("{}", format!("Creating the cards...").blue());
 }
 
 pub fn get_contents(path: &Path) -> String {
