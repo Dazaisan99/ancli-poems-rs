@@ -18,18 +18,23 @@ pub fn create_deck(contents: String, name: &String) -> Result<(), genanki_rs::Er
     let mut rng = thread_rng();
 
     let (fields, templates) = create_fields_and_templates(&contents);
+    let anki_id = rng.gen::<usize>();
 
-    let card_model = Model::new(rng.gen::<usize>(), "Poem Model", fields, templates);
+    let card_model = Model::new(anki_id, "Poem Model", fields, templates);
 
     let mut deck = Deck::new(
-        rng.gen::<usize>(),
+        anki_id,
         name,
         &format!("A deck containing the verses of {}", name),
     );
 
     eprintln!("{}", format!("Creating the cards...").blue());
 
-    let note = Note::new(card_model, contents.lines().collect());
+    let mut all_fields: Vec<&str> = contents.lines().collect();
+
+    all_fields.push(&contents);
+
+    let note = Note::new(card_model, all_fields);
 
     deck.add_note(note.unwrap());
 
@@ -75,7 +80,6 @@ fn create_fields_and_templates(contents: &String) -> (Vec<Field>, Vec<Template>)
     vec_field.push(Field::new("Poem"));
     vec_template.push(template);
 
-    println!("{:#?}{:#?}", vec_field, vec_template);
     (vec_field, vec_template)
 }
 
