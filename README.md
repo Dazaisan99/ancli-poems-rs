@@ -1,3 +1,5 @@
+## **Warning : This crate is not usable yet**
+
 # Ancli-poems
 
 Ancli-poems is a simple command line tool to help create anki cards from poems.
@@ -37,6 +39,12 @@ Finally, move the executable in ```target/release``` to a directory in your path
 $ ancli-poetry -p/--path <PATH> -n/--name <NAME> [-h/--help]
 ```
 
-<PATH> is the path to the file you want to create cards with
+PATH is the path to the file you want to create cards with
 
-<NAME> is the name you want the deck created to have
+NAME is the name you want the deck created to have
+
+A file with the name "*name*.apkg" will be created in the current directory
+
+Next, open Anki, click *File > Import* and select the file.
+
+The file has now been imported. Have fun !
