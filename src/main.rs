@@ -1,5 +1,5 @@
-use ancli_poetry::*;
-use clap::*;
+use ancli_poems as a;
+use clap::{Command, Arg};
 use std::path::Path;
 
 fn main() {
@@ -30,5 +30,5 @@ fn main() {
 
     let path = Path::new(&path_arg);
 
-    create_deck(get_contents(&path), outpath).unwrap();
+    a::create_deck(a::get_contents(&path), outpath).unwrap();
 }
