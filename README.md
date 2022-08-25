@@ -1,8 +1,8 @@
 ## **Warning : This crate is not usable yet**
 
-# Ancli-poems
+# Ancli-poems*rs
 
-Ancli-poems is a simple command line tool to help create anki cards from poems.
+Ancli-poems is a simple command line tool made with rust to help create anki cards from poems.
 
 ### Example
 ![Example](example.png)
@@ -18,9 +18,9 @@ Ancli-poems is a simple command line tool to help create anki cards from poems.
 Git clone the repository and go into it
 
 ```console
-$ git clone https://github.com/dazaisan99/ancli-poetry
+$ git clone https://github.com/dazaisan99/ancli-poems-rs
 
-$ cd ancli-poetry
+$ cd ancli-poems-rs
 ```
 
 Build the crate
@@ -36,7 +36,7 @@ Finally, move the executable in ```target/release``` to a directory in your path
 ## Usage
 
 ```console
-$ ancli-poetry -p/--path <PATH> -n/--name <NAME> [-h/--help]
+$ ancli-poems-rs -p/--path <PATH> -n/--name <NAME> [-h/--help]
 ```
 
 PATH is the path to the file you want to create cards with
