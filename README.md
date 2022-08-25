@@ -1,6 +1,6 @@
 ## **Warning : This crate is not usable yet**
 
-# Ancli-poems*rs
+# Ancli-poems-rs
 
 Ancli-poems is a simple command line tool made with rust to help create anki cards from poems.
 
