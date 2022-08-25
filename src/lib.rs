@@ -13,8 +13,6 @@ pub fn create_deck(contents: String, name: &String) -> Result<(), genanki_rs::Er
         process::exit(1);
     }
 
-    println!("{}", contents);
-
     let mut rng = thread_rng();
 
     let (fields, templates) = create_fields_and_templates(&contents);
