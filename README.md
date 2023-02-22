@@ -1,4 +1,5 @@
-## **Warning : This crate is not usable yet**
+## **Warning : This crate is not usable**
+### Please use [this addon](https://ankiweb.net/shared/info/2084557901) instead
 
 # Ancli-poems-rs
 
